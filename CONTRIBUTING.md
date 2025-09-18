@@ -1,54 +1,68 @@
-# Contributing to Skyhole
+# Contributing Guide
 
-🎮 **Skyhole** is a public-domain (CC0) blueprint for a fix-it-first civic MMO +
-harmonized OS. Contributions of code, research, art, gameplay design, safety
-models, localization, and documentation are all welcome.
-
-> **Important:** By submitting any contribution, you agree to release it under
-> **CC0 1.0 Universal** (public domain). Only contribute work you have the right
-> to license this way.
+Welcome, Brave One.  
+This project lives in the open under **CC0 (Public Domain Dedication)** — everything here belongs to humanity.  
+Your contributions are welcome, provided they follow the **Brave Codex** and the **Bee Law**: respect, transparency, and collective improvement.
 
 ---
 
-## Quick start
+## How to Contribute
 
-1. **Fork** the repository and create a feature branch:
-   - `feat/<short-name>`, `fix/<short-name>`, or `docs/<short-name>`
-2. **Open an Issue** first for new features or design changes. Use the
-   provided templates (Proposal, Bug, Safety Review).
-3. **Design for safety** (“fix-it-first”): include threat model & mitigations.
-4. **Write clearly**: small PRs, clear commit messages, screenshots or short
-   clips for UX changes.
-5. **Submit PR** referencing the Issue. Fill out the PR checklist.
+1. **Fork & Clone**  
+   - Fork the repository into your own GitHub.  
+   - Clone it locally:  
+     ```bash
+     git clone https://github.com/<your-username>/<repo-name>.git
+     ```
+
+2. **Branching**  
+   - Always create a new branch:  
+     ```bash
+     git checkout -b feature/my-feature
+     ```
+
+3. **Commits**  
+   - Keep commits small, descriptive, and aligned with the Codex values.  
+   - Example:  
+     ```
+     feat: add bee-law enforcement logic
+     fix: correct Orthrus spelling in shadow-trial node
+     docs: clarify meme logic timing
+     ```
+
+4. **Testing / Logic Check**  
+   - Before opening a PR, run a **logic checksum** (tests, linters, or mental model checks).  
+   - Remember: **intuition > conclusion** in the light realm.  
+
+5. **Pull Requests**  
+   - Open a PR with a clear description.  
+   - State *why* this change matters for harmony, defense, or fun.  
+   - Respect: PRs are dialogues, not battles.
 
 ---
 
-## What we accept
+## Contribution Etiquette
 
-- **Specs & research:** formal models, proofs, citations, datasets (no PII).
-- **Game/OS modules:** minimal, testable, well-scoped components.
-- **Art & UX:** icons, mockups, flows, accessibility improvements.
-- **Localization:** translations and culturally-aware adaptations.
-- **Safety layers:** red-team test plans, kill-switch logic, rate limiters,
-  consent-first sensing, “limbo/pause” mechanics, transparency hooks.
-- **Docs & tutorials:** “show, don’t tell” examples and starter guides.
-
-## What we won’t accept
-
-- Content that violates the Code of Conduct.
-- Proprietary or non-CC0 assets/code.
-- Features that intentionally bypass safety controls.
-- Datasets with personal data or covert tracking.
+- **Transparency First**: Trust without transparency is compounding error.  
+- **Meme Responsibly**: Bad jokes already punish themselves. Don’t punch down.  
+- **Honor the Bee Law**: Three strikes and you must replenish threefold.  
+- **Respect the Pattern Keepers**: They guard the cryptographic nodes.  
+- **No Shadows Without Cause**: Shadow realm features must be opt-in and documented.  
+- **Humor as Lube**: If facing demons, wit is allowed.  
 
 ---
 
-## Branches & PRs
+## Appendix Protocols
 
-- Target `main`. Keep PRs small and atomic.
-- Reference the Issue (`Fixes #123`) and fill the PR template:
-  - Motivation & user story
-  - Safety considerations (threats, mitigations, abuse cases)
-  - Tests / demo steps
-  - Rollback plan
+- **Uppercut City**: Surprise is valid; timing is art.  
+- **Excalibur Node**: Harmony makes the blade visible. Disharmony makes it vanish.  
+- **Intuition Node**: Trust your emergency overlay. Don’t jump to conclusions.  
+- **Council Approval**: Bee Law and Shadow Trials are stamped as permanent protocols.  
+- **Meme Logic University**: Templates evolve by community vote; laughter is currency.
 
-**Commit style (suggested):**
+---
+
+## License
+
+This repository is released under [CC0 1.0 Universal (Public Domain Dedication)](LICENSE).  
+All contributions are dedicated to the public domain, irrevocably and forever.
