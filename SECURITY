@@ -1,76 +1,196 @@
----
+# SECURITY.md — Project Vimana / Public Domain Ideas
 
-Project Vimana — SECURITY.md
-
-> Public-domain / CC0. This file documents the security posture, policies and operational playbook for the Vimana project and related game / masternode system. It is intentionally pragmatic and designed to enable the council, dev teams, and auditors to implement, verify and iterate on secure operation while preserving the project’s core principle: Fix It First.
-
-
-
+> Public-domain / CC0. This file documents the security posture, policies and operational playbook
+> for the Vimana project and related game / masternode system. It is intentionally pragmatic and
+> designed to enable the council, dev teams, and auditors to implement, verify and iterate on secure
+> operation while preserving the project’s core principle: **Fix It First**.
 
 ---
 
-1 — Executive summary
+## 1 — Quick summary / reporting
 
-This project combines game systems, civic masternodes, multisensory inputs, and new privacy-sensitive devices. Security must protect human safety, child privacy, ecosystems (especially bee-related assets), cryptographic integrity, and the public stake in the system.
+**Report security issues** (preferred channels)
+1. Open a private issue in this repository labeled `security` (if repo allows private issues).
+2. If you cannot use GitHub private issues, email: `security@yourdomain.example` (PGP below).
+3. For urgent active exploitation, call the incident phone: `+1-000-000-0000` (placeholder).
 
-Primary goals: prevent catastrophic exploits, ensure verifiable transparency to remove the “ghost in the machine,” protect minors, preserve bee/biological assets, and enable accountable council governance.
+**PGP (optional)**
+- PGP key fingerprint: `<PGP-FINGERPRINT-HERE>`  
+(Replace with project key for encrypted sensitive disclosures.)
 
-Core security principle: Fix It First — prioritize safety, containment, and rollback before scaling features.
+**What to include when reporting**
+- Clear description of the issue.
+- Steps to reproduce, proof-of-concept artifacts, logs, timestamps.
+- Environment details (OS, versions, device types, network).
+- If applicable: sample data, affected master-node IDs, bee/asset identifiers.
+- Request for acknowledgement & timeline for response.
 
-
-
----
-
-2 — Security principles (project-specific)
-
-1. Fix It First — safety / containment > feature parity. Any change that raises systemic risk must be gated.
-
-
-2. Transparency with Controls — logs, hashes, and auditable trails are visible to council/auditors; sensitive data is protected by least privilege.
-
-
-3. Human-in-the-Loop for High-Impact Decisions — any action changing planetary-scale defenses, bee economy, or masternode governance requires Council signoff.
-
-
-4. Intuition Node Integrity — treating user intuition triggers as ephemeral overlays; never as irreversible authority. Intuition signals may inform UX but cannot override cryptographic flows.
-
-
-5. No-Mercy Clause as Rule, Not Chaos — enforcement pathways exist for malicious nodes, but with defined legal/auditing steps before permanent actions.
-
-
-6. Oddly-Inspiring Language — replace insulting terms with human-centered alternatives (e.g., “oddly-inspiring”), to maintain respectful community norms.
-
-
-7. Privacy by Default — baby devices, minors, and cameras require strict opt-in, no remote camera on child accounts, cryptographic attestation for any sensory access.
-
-
-
+**Triage promise**
+- We will acknowledge receipts within **48 hours** and provide an initial update within **5 business days**.
+- High-severity reports (active exploit, risk to safety/children/biological assets) are expedited.
 
 ---
 
-3 — Threat model (top risks)
+## 2 — Primary goals & prioritized assets
 
-Spoofing / identity fraud (fake IDs, spoofed masternode votes)
+**Primary security goals**
+- Protect human safety and child privacy.
+- Preserve biological / ecological assets (especially bee-related assets).
+- Ensure cryptographic integrity of masternode / wallet systems.
+- Prevent catastrophic exploits and reduce the “ghost in the machine.”
+- Provide verifiable transparency and accountable council governance.
 
-Deep-fake live streams (video/audio manipulation during live events)
-
-0-day exploits / shadow-realm abuse (rapid unknown exploit of masternode or consensus)
-
-Data exfiltration from biometric/household sensors (pause/state abuse)
-
-Bee theft / ecological attack (malicious actors stealing or corrupting bee wallets/data)
-
-Large-scale social manipulation (memes as attack vectors to corrupt governance)
-
-Abuse of intuition/reaction overlays to socially engineer actions
-
-Supply-chain / hardware trojans in peripherals (mag-sol battery or gyroscopic devices)
-
-
+**High-value assets**
+- Master-node wallets & stake (private keys, seed material).
+- Bee-related IoT telemetry, registries, and supply chains.
+- Multisensory inputs (camera, audio, environmental sensors).
+- Council voting & governance state.
+- User identity tokens / session cookies.
+- Build pipelines & deployment artifacts.
 
 ---
 
-4 — Recommended architecture & safeguards (high level)
+## 3 — Threat model (short)
+
+**Relevant threat categories**
+- Remote compromise of masternode operators (key theft, unauthorized withdrawal).
+- Data poisoning / model manipulation via unsanitized multisensory inputs.
+- Privacy leaks of sensitive video/audio (child safety risk).
+- Supply-chain compromise (malicious dependency, build tampering).
+- Nation-state / advanced actors attempting large-scale reconnaissance or exploitation.
+- Physical tampering with bee-servers or field devices, theft of biological material.
+- Rogue actors exploiting memetic nodes (social engineering, mass persuasion).
+
+**Risk controls (high-level)**
+- Hardware-based key storage for any production wallet (HSM, secure enclave).
+- Mandatory input sanitization and anomaly-detection for sensor streams.
+- Cryptographic signing of all releases and governance proposals.
+- Multi-party approval for high-impact operations (council + auditor).
+- Rate-limiting, circuit-breakers and automated rollback for suspicious mass changes.
+
+---
+
+## 4 — Responsible disclosure policy (brief)
+
+- We request reporters do not publicly disclose issues before we complete triage and mitigation unless agreed.
+- Coordinated disclosure windows will be negotiated for CVE assignment and public advisories.
+- We may offer bug-bounties or public acknowledgment at the council’s discretion.
+
+---
+
+## 5 — Secure development lifecycle (SDLC) requirements
+
+**Code & repo**
+- Enforce branch protection: require PR reviews from at least **2** reviewers, CI pass, and signed commits for `main`.
+- Use `CODEOWNERS` to require specialist review for critical directories (crypto, sensor ingestion, governance).
+- Mandatory security linter and SCA (Software Composition Analysis) on every PR.
+
+**Secrets**
+- No secrets in repo. Use secret managers (e.g., HashiCorp Vault, GitHub Secrets, AWS SSM Parameter Store).
+- Rotate keys on suspicion. Enforce short TTL for ephemeral credentials.
+
+**Dependencies**
+- Pin dependency versions. Run SCA weekly and block known-critical CVEs.
+- Use reproducible builds where possible. Sign build artifacts.
+
+**Testing**
+- Unit + integration tests mandatory. Add fuzzing for parsers that ingest external data (e.g., media, telemetry).
+- Threat modeling reviews for each major feature; record decisions in ADRs (Architecture Decision Records).
+
+---
+
+## 6 — Deployment & prod security checklist
+
+Before any production deployment:
+- ✅ Build artifacts cryptographically signed.
+- ✅ Release notes include SBOM (Software Bill of Materials).
+- ✅ Automated tests and SCA passed.
+- ✅ Infra IaC validated and reviewed.
+- ✅ Secrets checked/refresh tokens rotated.
+- ✅ Rollback plan & automated canary with telemetry alarms.
+- ✅ Council & security approvers listed in release.
+
+Runtime protections:
+- HSM or secure enclave for master-node keys.
+- Rate-limits on governance votes changes, wallet withdrawals.
+- Immutable audit logs (append-only) stored offsite; tamper-evidence.
+- Real-time anomaly detection (spike in memetic translation requests, rapid wallet spends, sensor spoofing).
+
+---
+
+## 7 — Incident response (IR) plan (summary)
+
+**1 — Detection**: Alerts from CI, runtime monitors, user reports.
+**2 — Triage**: Classify severity (S0 emergency to S3 low). If S0/S1 -> incident declared.
+**3 — Containment**: Revoke compromised keys, isolate nodes, pause governance actions.
+**4 — Eradication**: Apply patches, rotate secrets, rebuild compromised artifacts.
+**5 — Recovery**: Validate integrity, re-enable services in controlled fashion.
+**6 — Lessons & disclosure**: Post-incident review, publish advisory (if safe), update security docs.
+
+Keep an incident runbook and playbooks for:
+- Key compromise
+- Data exfiltration of PII or media
+- Supply-chain compromise
+- Physical theft/tampering of on-field devices
+
+---
+
+## 8 — Privacy & multisensory data rules
+
+**Principles**
+- Minimize collection: only collect what’s required for the feature.
+- On-device first: prefer local processing and ephemeral telemetry where possible.
+- Consent & disclosure to users: clear UI/UX consent, retention policies.
+- Sensitive categories (children, minors): never store raw camera/audio for more than the minimum; prefer ephemeral detection + aggregated telemetry.
+
+**Processing & storage**
+- Encrypted at-rest and in-transit (TLS 1.3+).
+- Access controls audited and limited to named roles.
+- Redaction pipelines for PII before long-term storage.
+
+**Retention**
+- Define retention policy per data type (e.g., 30 days for raw sensor video; 180 days for derived telemetry), configurable by region-compliance.
+
+---
+
+## 9 — Cryptography & wallets (practical)
+
+- Use well-reviewed libs (libsodium, openssl modern branch). Prefer hardware-backed crypto.
+- DO NOT implement custom crypto. Use established algorithms (Ed25519, Curve25519, AES-GCM).
+- Private keys MUST be stored in HSM/secure enclave; software-only keys require multi-sig for withdrawals.
+- Governance actions that move funds require **n-of-m** multisig (n >= 3; council decides exact threshold).
+- Provide watch-only keys for auditors and read-only blockchain explorers.
+
+---
+
+## 10 — CI/CD security snippet (example)
+
+> This example shows automated checks to run in your CI pipeline (GitHub Actions / GitLab CI / others).
+
+```yaml
+# Example: .github/workflows/ci.yml snippet
+name: CI Security
+on: [push, pull_request]
+jobs:
+  test-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with: python-version: "3.11"
+      - name: Install deps
+        run: pip install -r requirements-dev.txt
+      - name: Run linters
+        run: make lint
+      - name: Run unit tests
+        run: make test
+      - name: Run SCA (snyk/OWASP dependency-check)
+        run: snyk test || true
+      - name: SBOM
+        run: syft . -o cyclonedx > sbom.cyclonedx.xml
+      - name: Sign artifact
+        run: gpg --detach-sign --armor dist/* || true4 — Recommended architecture & safeguards (high level)
 
 4.1 Zones
 
