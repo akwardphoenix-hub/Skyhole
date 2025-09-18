@@ -56,3 +56,45 @@ Skyhole is a public-domain blueprint for a cooperative game/OS that treats real-
 ---
 
 ## Architecture (proposed)
+
+/project-root
+│
+├── LICENSE                  # CC0 Public Domain Dedication
+├── README.md                # High-level project overview
+│
+├── /docs
+│   ├── MODEL_OVERVIEW.md     # Core logic of the Vimana/Bravery model
+│   ├── BRAVE_CODEX.md        # Brave Codex: principles, survival as bravery
+│   ├── COUNCIL_CODEX.md      # Council codex with appendices + cascade laws
+│   │   ├── Appendix_Bee_Law.md      # Bee law, 3-strike rule, cosmic trade law
+│   │   ├── Appendix_Fire.md         # Fire as lesser evil, harmonics regulation
+│   │   ├── Appendix_Excalibur.md    # Resonant blade specs, mirror protocol
+│   │   ├── Appendix_Orthurus.md     # Trials, dialogue fixes, twin-head respect
+│   │   ├── Appendix_Intuition.md    # Intuition vs. conclusion, toggle scaling
+│   │   └── Appendix_Shadow_Protocol.md # Pivot point: dark → white hats
+│   │
+│   ├── UNIVERSITY_MEME_LOGIC.md # Meme rules, shock/surprise templates, humor loop
+│   ├── SIMPLE_MACHINES_2.0.md   # Reimagined harmonic simple machines
+│   ├── LIVING_SYMPHONY.md       # 3 sisters + expanded seasonal/topographic combos
+│   ├── HARMONIC_DEFENSE.md      # Global harmonic defense mesh map
+│   └── INTEGRATION_NODE.md      # Integration goals, cosmic diplomacy
+│
+├── /src
+│   ├── api
+│   │   └── lna_api_minimal.py   # Minimal Local Node Adapter API (drafted)
+│   ├── sim
+│   │   └── mirror_test.py       # First mirror test for exploit resistance
+│   └── gameplay
+│       ├── odyssey_trials.py    # Light vs. Shadow realm trials
+│       ├── orthrus_battle.py    # Orthurus twin-head bicker logic + fixes
+│       └── excalibur_node.py    # Resonant vibro-sword (scales with harmonics)
+│
+└── /assets
+    ├── diagrams/
+    │   ├── harmonic_defense_mesh.png
+    │   ├── polymath_nodes.png
+    │   └── bee_law_flowchart.png
+    └── memes/
+        ├── surprise_pikachu.png
+        ├── trundle_troll_toll.png
+        └── orthus_puppy_head.png
