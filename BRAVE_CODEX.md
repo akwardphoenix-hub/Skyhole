@@ -16,6 +16,7 @@ The BRAVE CODEX codifies the core ethics, trigger rules, and stewardship mechani
 - **Polymath Stewardship** — Cross-disciplinary knowledge (science, art, engineering, jurisprudence, ritual) must be embedded in governance nodes; specialization is supported by broad context.
 - **Transparency with Safeguards** — Maximum feasible transparency, with calibrated protective layers where release would cause immediate harm.
 - **Respect for Culture & Faith** — Cultural and religious practices are respected. Local councils review cultural node launches.
+- **Bravery as Leadership** — Bravery is recognized as a survival mechanic and the only true measure of alpha leadership. Bravery guided by irrefutable logic anchors the beacon of truth.
 
 ---
 
@@ -23,19 +24,67 @@ The BRAVE CODEX codifies the core ethics, trigger rules, and stewardship mechani
 - **Council Mode** — Any masternode may call a *Council Vote* for policy changes or urgent decisions. Council votes are recorded and auditable.
 - **Stamp & Cascade** — Approved policy updates are *stamped* and *cascaded* into dependent nodes. A stamp includes author, version, rationale, and traceable diff.
 - **Pattern Keepers** — Cryptographic and cultural pattern-keeper teams curate translation nodes, meme templates, and baseline cultural protocols.
+- **Appendix Layering** — Permanent appendices (like this codex) are hard-coded reference layers. Updates can only be appended, never erased.
 
 ---
 
 ## Enforcement & Remedy
-- **Three-Strike Bee Law (example)**  
-  1. Minor theft or spoofing → required restitution (e.g., restore 3x stolen bee-equivalent assets) + public remediation plan.  
+- **Three-Strike Bee Law**  
+  1. Minor theft or spoofing → restitution (3× stolen bee-equivalent assets) + public remediation plan.  
   2. Repeat offense → temporary ban from certain nodes + harder restitution.  
   3. Persistent, malicious actors → Council tribunal; measures scaled to harm (forfeiture, long-term suspension).  
   *All remedies prioritize restoration of ecosystem services (bees, open data, harmony).*
 
-- **No-Mercy Clause (operational meaning)**  
-  A governance enforcement mechanism that triggers immediate automated containment of actions proven to endanger mass life or systemic integrity. Designed as a last-resort technical safeguard — not a call to extrajudicial violence.
+- **No-Mercy Clause**  
+  Automated containment of actions proven to endanger mass life or systemic integrity. Strictly a last-resort safeguard, not extrajudicial punishment.
 
+- **Shadow Protocol**  
+  Shadow actors may pivot to *White Hat Status* upon completing restitution (15% persistent/temporary until repaid). Pivot point is recorded for Council and public memory.
+
+---
+
+## Intuition & Ghost Containment
+- **Intuition Node** — An emergency overlay that synthesizes multi-sensory data and pushes urgent awareness into action. Always optional; not a replacement for judgment.  
+- **Conclusion vs. Intuition** — Intuition = fast overlay (react before haymaker lands). Conclusion = sum of observed parts (recognize haymaker from motion).  
+- **Ghost in the Machine** — A minuscule tolerance for error (.000000000001). Defined as human error only, never logic. Logged, isolated, and reviewed before cascading.
+
+---
+
+## Ritual / Synjitsu Naming
+- **Synjitsu** — Intentional synthesis action by a community to harmonize a node.  
+- Replace *ritual* with *synjitsu* in future documents for clarity.
+
+---
+
+## Cultural & Species Nodes
+- **Bee Protocol** — Ledger entries, service tokens, and protective laws requiring Council approval for bulk extraction/modification.  
+- **Bug/Biota Diplomacy** — Insects and nonhuman ecosystems modeled as stakeholders with tokenized service credits (pollination, decomposition, resonance).  
+- **Three Sisters Defense** — Harmonic farming pattern applied to defense: corn (structure), beans (resonance binding), squash (shield). Expanded seasonally into Living Symphony nodes.  
+- **Canine Logic** — Dogs are allies by face; language of tone respected. “Dog Face Protocol” appended for AI interfaces.
+
+---
+
+## Safety and Disclosure
+- Experimental nodes affecting planetary harmonics must undergo multi-level simulation, Council review, and independent red-team testing.  
+- All vulnerabilities and suspicious incidents must be reported via `SECURITY.md`.
+
+---
+
+## Excalibur Node (Integration)
+- **Mirror Protocol** — Excalibur mirrors intention. Disharmony renders its blade invisible; harmony sharpens it.  
+- **Defense Mode** — Holding a mirror is both defense and attack. AI mirrors human states; players must surpass shadow by harmonizing.  
+- **Odyssey Trials** — Optional hell mode (Orthurus trials). Shadow = conclusions, Light = intuition. Both paths feed back into bee law and restitution cycles.
+
+---
+
+## Appendix Quick Links
+- Stamping procedure: `docs/stamp-procedure.md`
+- Council proposal template: `governance/council-proposal.md`
+- Security reporting: `SECURITY.md`
+
+---
+
+*This codex is living — stamped and cascaded only after Council review.*
 ---
 
 ## Intuition & Ghost Containment
