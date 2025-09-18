@@ -1,0 +1,339 @@
+---
+
+Project Vimana — SECURITY.md
+
+> Public-domain / CC0. This file documents the security posture, policies and operational playbook for the Vimana project and related game / masternode system. It is intentionally pragmatic and designed to enable the council, dev teams, and auditors to implement, verify and iterate on secure operation while preserving the project’s core principle: Fix It First.
+
+
+
+
+---
+
+1 — Executive summary
+
+This project combines game systems, civic masternodes, multisensory inputs, and new privacy-sensitive devices. Security must protect human safety, child privacy, ecosystems (especially bee-related assets), cryptographic integrity, and the public stake in the system.
+
+Primary goals: prevent catastrophic exploits, ensure verifiable transparency to remove the “ghost in the machine,” protect minors, preserve bee/biological assets, and enable accountable council governance.
+
+Core security principle: Fix It First — prioritize safety, containment, and rollback before scaling features.
+
+
+
+---
+
+2 — Security principles (project-specific)
+
+1. Fix It First — safety / containment > feature parity. Any change that raises systemic risk must be gated.
+
+
+2. Transparency with Controls — logs, hashes, and auditable trails are visible to council/auditors; sensitive data is protected by least privilege.
+
+
+3. Human-in-the-Loop for High-Impact Decisions — any action changing planetary-scale defenses, bee economy, or masternode governance requires Council signoff.
+
+
+4. Intuition Node Integrity — treating user intuition triggers as ephemeral overlays; never as irreversible authority. Intuition signals may inform UX but cannot override cryptographic flows.
+
+
+5. No-Mercy Clause as Rule, Not Chaos — enforcement pathways exist for malicious nodes, but with defined legal/auditing steps before permanent actions.
+
+
+6. Oddly-Inspiring Language — replace insulting terms with human-centered alternatives (e.g., “oddly-inspiring”), to maintain respectful community norms.
+
+
+7. Privacy by Default — baby devices, minors, and cameras require strict opt-in, no remote camera on child accounts, cryptographic attestation for any sensory access.
+
+
+
+
+---
+
+3 — Threat model (top risks)
+
+Spoofing / identity fraud (fake IDs, spoofed masternode votes)
+
+Deep-fake live streams (video/audio manipulation during live events)
+
+0-day exploits / shadow-realm abuse (rapid unknown exploit of masternode or consensus)
+
+Data exfiltration from biometric/household sensors (pause/state abuse)
+
+Bee theft / ecological attack (malicious actors stealing or corrupting bee wallets/data)
+
+Large-scale social manipulation (memes as attack vectors to corrupt governance)
+
+Abuse of intuition/reaction overlays to socially engineer actions
+
+Supply-chain / hardware trojans in peripherals (mag-sol battery or gyroscopic devices)
+
+
+
+---
+
+4 — Recommended architecture & safeguards (high level)
+
+4.1 Zones
+
+Edge / Peripherals: baby tablet, doorbell, gyros, mag-sol batteries — run minimal code, sign firmware, perform local sandboxing, aggressive rate-limits.
+
+Player Clients: run with ephemeral session tokens, local save-state pause cryptographically signed, privacy toggles exposed and default OFF for minors.
+
+Game Backend: microservices behind API gateway; quorum-based validation for critical events.
+
+Consensus Layer / Masternode Layer: hybrid permissioned+public architecture. Sensitive masternodes (government, religious councils) are permissioned and audited; general nodes run in public but with stake-based and behavior-based reputation.
+
+Council & Pattern-Keeper Tier: highest trust, human-audited actions, requires multi-party signing (M-of-N) for destructive operations.
+
+
+4.2 Controls & primitives
+
+Signed Save-State (Limbo) — full game-state snapshots are signed by client device and server; pause/resume requires possession of private key or approved guardian token.
+
+Muteable / Gated Intuition Overlay — intuition outputs are stamped as non-authoritative overlays; only allowed to recommend, not act, unless explicitly authorized via council rules.
+
+Bee Wallet Protections — multisig custody for bee wallets; 3-strike replacement policy with automatic reparation calculations; all bee transactions require on-chain attestation and public trace.
+
+Deepfake detection — multi-model filtering (vision + audio + timing) with decentralized verification via pattern-keeper nodes. Flagged media enters smoke-test queue before public display.
+
+Ghost Containment / Ghost Clause — “ghost” means unintended secret logic; systems must expose checksums, reproducible builds, reproducible sim outputs, and have a “ghost checksum” routine ran on every release.
+
+Checksum / Audit Trail — every build, model change, and dataset ingest must be recorded with SHA256 checksums and signed artifacts; periodic proofs-of-consistency published to mirror nodes.
+
+
+
+---
+
+5 — Identity & onboarding
+
+Real-ID requirement for certain roles (e.g., ex-politicians, federal-only node access). Use verified KYC providers; store minimal identifiers off-chain with proofs on-chain.
+
+Anonymity layers for general players; privacy-preserving techniques (ZK proofs) for proving stake/achievement without revealing identity.
+
+Onboarding flow: First run safety tutorial, guardian consent for minors, privacy opt-ins, device pairing attestation (TPM/secure element or attestation service).
+
+
+
+---
+
+6 — Governance, Council & pattern keepers
+
+All high-impact changes require Council vote and a minimum of M-of-N signatures from different node classes (legal, technical, religious/ethnic reps where applicable).
+
+Pattern keepers (cryptographers/seed-keepers) have a live feed for anomaly detection; their signals are advisory to the Council.
+
+Public audit windows: before launching a seasonal update, a vote window with public testnet and bug bounty must run.
+
+
+
+---
+
+7 — Incident response (IR)
+
+1. Detection & Triage: flag source, severity (S0–S5), affected nodes, immediate mitigation (quarantine).
+
+
+2. Containment: isolate affected services, engage soft-walls, revoke misused session tokens, freeze masternode voting where applicable.
+
+
+3. Forensic Snapshot: capture signed save-states, mempool, model versions, device attestations, and the checksum chain.
+
+
+4. Remediation: patch, roll back signed build, publish CVE-style advisory, propose Council action if masternode penalties needed.
+
+
+5. Reparation & Bee Law: if ecological damage (bee theft) occurs, follow bee-law template: 3× replacement + community recompense; escalate to court/council if malicious.
+
+
+6. After Action: publish IR report, update ghost clause, increment audit counters.
+
+
+
+
+---
+
+8 — Privacy & child safety rules
+
+No cameras for children accounts by default. Any camera-based functionality for minors requires explicit guardian attestation, local-only processing by default, and STRONG encryption in transit + at rest.
+
+Data minimization: only store what is necessary for function. Use ephemeral analytics where possible; strong differential privacy for any bulk analytics.
+
+Opt-in peripheral sharing: features that access home cameras, doorbells, sensors must be explicit opt-in and logged. When used to pause the game automatically, local attestations and user overrides are required.
+
+
+
+---
+
+9 — Build, CI/CD & reproducible security
+
+All releases must be reproducible from a public source tree. Signed artifacts, reproducible builds and attested container images.
+
+Prod security: separate build, test, staging, and prod secrets; rotate keys automatically; enforce hardware security modules (HSM) for council keys.
+
+Red team / blue team: scheduled adversarial exercises; “shadow realm” red team for exploit discovery; bug bounty program with priority payouts for infra and bee/eco issues.
+
+
+
+---
+
+10 — Privacy/Legal / Ethical guardrails
+
+Local laws (privacy, child protection, export control) must be complied with in deployment countries.
+
+For high-impact physics/energy / mag-sol battery specs: produce non-actionable high-level conceptual papers only. Any hardware instructions that could be weaponized must be handed to vetted engineering partners under NDA and legal review.
+
+
+
+---
+
+11 — Special rules & modules (project-specific)
+
+11.1 The No-Mercy Clause (enforcement flow)
+
+Trigger conditions: repeated destructive behavior, proven spoofing at scale, theft of ecological assets.
+
+Steps: automatic soft-containment → Council review (72-hr window) → M-of-N approval → enforcement (revoke masternode stake, ban, repatriation payments).
+
+Emergency: if imminent physical harm is detected, emergency protocol executes with minimal Council quorum, followed by post-hoc audit.
+
+
+11.2 Limbo / Demi-Loki mode (pause mechanics)
+
+Save-states are cryptographically signed snapshots. Any resume requires signing by owner’s key or guardian key.
+
+Shared/Agreed Pause: optional group-vote pause that freezes a match for all participants for a limited period.
+
+Abuse controls: limit number of limbo entries per session; flag anomalous limbo patterns for review.
+
+
+11.3 Bee law
+
+Bee wallets MUST be multisig (beekeepers + local council + pattern-keeper escrow).
+
+Theft protocol: 3-strike theft rule — replacement obligation = 3× bee asset value; immediate freeze and forensic capture.
+
+Bee privacy: location telemetry is obfuscated, only coarse provenance available to public; fine-grain location available to Council under strict audit.
+
+
+11.4 Intuition node & reaction vs. conclusion
+
+Intuition = advisory overlay derived from fused sensors & personal model. Mark as non-authoritative.
+
+Reaction / pop-quiz mechanics: returning from Shadow to Light may be allowed via performative moral checks or small stake fee (configurable, fade over time by data-driven decision).
+
+Never bind financial, legal, or life-critical operations to intuition-only outcomes.
+
+
+11.5 Pattern keepers, Polymath & checksum
+
+Pattern keepers maintain live cryptographic checksums of models/datasets. Any drift triggers review.
+
+Polymath node houses verification tools and cross-discipline audits; treat as primary audit lane for the Council.
+
+
+
+---
+
+12 — Deploy checklist (minimal)
+
+1. Reproducible build with signed artifact.
+
+
+2. Publish artifact checksum to at least 3 independent mirror nodes.
+
+
+3. Run red-team exploit scan and resolve P0/P1 issues.
+
+
+4. Council M-of-N pre-launch signoff for high-impact seasonal changes.
+
+
+5. Run privacy impact assessment for sensor features; obtain guardian attestation flows.
+
+
+6. Activate bug-bounty with explicit bee/ecosystem/child-safety prioritization.
+
+
+7. Ensure IR playbook is distributed and contact roster current.
+
+
+
+
+---
+
+13 — Incident hotlines & contacts (placeholders)
+
+Council security lead: security-lead@vimana.example
+
+IR triage: ir@vimana.example
+
+Pattern-keeper channel: #pattern-keepers (encrypted)
+(Replace with real emails/PGP keys in production.)
+
+
+
+---
+
+14 — Appendices (quick references)
+
+Appendix A — Bee Law (short): 3× replacement, multisig custody, audit trail, three strikes rule, council review.
+
+Appendix B — Brave Codex (short): bravery as stewardship; code of conduct for those in security-critical roles. (Refer to BRAVE-CODEX.md in repo.)
+
+Appendix C — Ghost Clause: all releases must include ghost checksum and reproducible audit steps.
+
+Appendix D — Limbo API: spec for pausing/resuming save-states (API example lives in docs/limbo-spec.md).
+
+Appendix E — Ethics/Religious/Indigenous consultation: consult with cultural reps before modeling faith-specific anchor points (e.g., Mecca anchor or local sacred sites).
+
+
+
+---
+
+15 — How to use this file
+
+Developers: follow Deploy checklist. Add infra changes as PRs referencing SECURITY.md.
+
+Council: use this as the minimum basis for signoffs; update the M-of-N thresholds as the project scales.
+
+Auditors: run periodic checks against the reproducible-build and ghost checksum chain.
+
+
+
+---
+
+16 — Next immediate actions (PRs to open)
+
+1. docs/limbo-spec.md — complete API and cryptographic examples for save-state pause/resume.
+
+
+2. policy/bee-law.md — formal, machine-readable bee compensation rules and multisig templates.
+
+
+3. infra/reproducible-build.md — CI/CD instructions to produce signed artifacts and publish checksums.
+
+
+4. ir/playbook.md — full IR playbook with runbooks and contact PGP keys.
+
+
+5. privacy/minors-policy.md — explicit guardian attestation flows and enforcement.
+
+
+6. council/m-of-n-policy.md — governance thresholds for emergency vs non-emergency actions.
+
+
+
+
+---
+
+17 — Final note (policy & legal)
+
+This document is a design + operational policy starting point. Real deployments require:
+
+Security engineering teams to implement the technical controls.
+
+Legal/compliance review in each jurisdiction.
+
+Cultural & religious consultation for sensitive anchor points.
+
+Independent third-party audits on cryptographic & ecological controls.
+
