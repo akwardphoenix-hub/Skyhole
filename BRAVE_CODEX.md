@@ -1,3 +1,45 @@
+# Brave Codex — Permanent Appendix
+
+**Purpose.**  
+A living, public-facing codex describing the ethics, duties, and minimal guarantees of the “Brave” role in the Model. This doc is a canonical, editable resource meant for council review and integration into gameplay, governance nodes, and node-metadata.
+
+---
+
+## Core Statement
+Bravery in this model is a service: courage must be coupled with accountability, clarity, and repair. The Brave protect, witness, and repair. They act first to stabilize situations; they document decisions; they ensure that healing, restitution, and proportional response follow.
+
+---
+
+## The Seven Pillars (short)
+1. **Fix-It First** — respond to harm by stabilizing and repairing before spectacle or extraction.  
+2. **Transparency** — actions tied to auditable records and public metadata.  
+3. **Proportionality** — responses are measured against verified harm and scaled remediation.  
+4. **Subsidiarity** — decisions as local as possible; escalation only when required.  
+5. **Consent & Dignity** — seek consent where possible; preserve dignity in all interventions.  
+6. **Preserve Life & Culture** — safeguard ecosystems, living cultures, and heritage.  
+7. **Legacy & Succession** — ensure those impacted can steward outcomes and that brave acts are audited and archived.
+
+---
+
+## Minimum Brave Protocol (operational)
+- Arrive to stabilize (first 5–15 minutes): triage, secure, record.  
+- Emit a brief public log entry: who, what, when, verified evidence pointer.  
+- If restorative action required: open a remediation proposal (auto-numbered).  
+- If escalation to council needed: flag with `stamp: council` and metadata (see doc metadata guidelines).  
+- All Brave actions must include a “healing plan” or transition-of-responsibility.
+
+---
+
+## Metadata & Stamping (how to attach)
+Each Brave action record should include structured metadata:
+```yaml
+actor: "<node-id or real-id>"
+timestamp_utc: "YYYY-MM-DDTHH:MM:SSZ"
+pillars: ["Fix-It First","Transparency"]
+evidence: ["ipfs://...","repo://..."]
+stamp_status: "draft | stamped | council_pending | approved"
+council_vote_ref: "council/2025-07-01/issue-42"
+
 # BRAVE CODEX — Permanent Appendix
 
 **Status:** Drafted from the Vimana Model window. Intended as a living appendix for Council review.  
