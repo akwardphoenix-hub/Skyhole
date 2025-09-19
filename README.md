@@ -127,3 +127,7 @@ See cascadefixeslist.txt for live fixes." > README.md
 git add README.md
 git commit -m "Add starter README"
 git push origin main
+
+## 🦁 The Brave Codex
+The BRAVE CODEX is the living appendix for this model.  
+👉 [Read it here](BRAVE_CODEX.md)
