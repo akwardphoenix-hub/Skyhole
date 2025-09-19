@@ -1,0 +1,16 @@
+---
+
+# Quick implementation checklist (one-shot)
+1. Save above as `BRAVE_CODEX.md` into `/appendix/permanent/` in your repo.
+2. Add YAML frontmatter if your doc system supports it (example below).
+3. Commit & push.
+
+Example frontmatter to put at top of file (optional):
+```yaml
+---
+title: "Brave Codex"
+slug: "brave-codex"
+appendix: true
+stamp_status: "draft"
+version: "0.1"
+---
