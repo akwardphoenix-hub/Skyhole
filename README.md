@@ -131,3 +131,16 @@ git push origin main
 ## 🦁 The Brave Codex
 The BRAVE CODEX is the living appendix for this model.  
 👉 [Read it here](BRAVE_CODEX.md)
+# Project: Vimana — Design Window & Transformation
+
+This repository contains the full public-domain design for the "Vimana" model — a game/system of nodes, nodes-council, social & cyber-security primitives, cultural nodes, and world-building artifacts.
+
+**Important:** All content here is published under CC0 / Public Domain. Use, remix, and build freely.
+
+Key docs:
+- TRANSFORMATION.md — how this raw chat window became the model (provenance + narrative).
+- CHANGELOG.md — timeline of major decisions + versions.
+- APPENDICES/ — finalized codices (bee law, Excalibur, intuition node, etc.).
+- LICENSE — CC0 declaration.
+
+If you want the short story: this started as a public brainstorming window and matured into a structured, auditable design that preserves the author's voice and intent.
