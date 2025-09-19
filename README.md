@@ -1,42 +1,64 @@
-# Skyhole
-Tao de Harmony
-# SKYHOLE
-*A fix-it-first civic MMO + harmonized OS (design spec, CC0)*
+# Brave Codex — README
 
-Skyhole is a public-domain blueprint for a cooperative game/OS that treats real-world problem solving as the core loop. It blends a playful MMO layer (events, trials, cosmetics) with a civic layer (micro-donations, open councils, transparent audits) and a safety layer (pause/limbo, white-hat pivot, consent-first sensing). Everything here is **CC0**—fork, remix, and ship.
-
-> **Project status:** Early design. This repo is a living spec + starter tasks for engineers, researchers, policymakers, artists, and culture bearers.
+## 🌍 Purpose
+This repository houses the **Brave Codex**, a living appendix that codifies survival, harmony, and justice protocols into a universal model.  
+It integrates with the **Cascade Fixes Protocol** to ensure consistency, transparency, and resilience.
 
 ---
 
-## What Skyhole *is*
-- A **fix-it-first** framework where games drive measurable good (first aid, resilience drills, local projects).
-- A **civic rails** concept (micro-donations, verified deliberation, public metrics).
-- A **safety-first runtime** (always-on pause, consented sensing, transparent moderation, red-team sandboxes).
-- A **culture lab** (meme translation, interfaith accommodations, language bridges, seasonal festivals).
+## 📜 Core Principles
+1. **Bravery as Survival**  
+   Bravery is treated as the core survival mechanic and the baseline for true leadership.  
 
-## What Skyhole *is not*
-- Not finished software. This is a spec + contribution map.
-- Not medical, legal, or emergency advice. It provides drills and hand-offs to real services.
-- Not surveillance tech. All sensors are **opt-in**, local-first, and auditable.
+2. **Irrefutable Logic as Beacon**  
+   Intuition and reasoning are merged into codified steps that align with universal harmony.  
+
+3. **Ghost in the Machine Clause**  
+   Errors may exist only as human error — never hidden logic.  
+
+4. **Bee Law**  
+   Any theft or destruction must be repaid threefold, ensuring balance and accountability.  
+
+5. **Mirror Defense**  
+   Sometimes the strongest defense and attack is reflection — revealing truth through transparency.
 
 ---
 
-## Core Principles
-1. **Fix-It-First:** Fun never trumps safety. If tension arises, we pause, patch, resume.
-2. **Consent, Transparency, Accountability:** No hidden collection; no dark patterns; auditable logs.
-3. **Personal Masternode:** Each player has a self-owned identity/RNG profile used for trust and flavor—not for ads.
-4. **Pause Everywhere:** 
-   - **Solo Pause** (instant), **Party Pause** (vote), **AOE Pause** (mutual consent across sides).
-   - **Demi-Loki (Limbo)**: suspended play state; no grind loss; anti-abuse rate limits.
-5. **Intuition vs. Conclusion:**
-   - **Intuition** = fast, embodied warnings (subtle UI hints).
-   - **Conclusion** = reasoned, after-the-fact judgments (clear prompts).
-6. **Light Realm / Shadow Realm:**
-   - **Light:** learning-forward, generous failsafes.
-   - **Shadow:** opt-in hard mode; White-Hat pivot always available; fair exits (quiz or micro-donation).
-7. **Bee Law (Ecosystem Stewardship):**
-   - Tamper with guardianship → **restore 3×** equivalent value (reparable, verifiable, council-audited).
+## 🔄 Cascade Fixes Protocol
+The **Cascade Fixes Protocol** ensures every update propagates logically:
+- Every node is reviewed for errors.  
+- Fixes are cascaded backward and forward.  
+- Redundant or contradictory logic is harmonized.  
+
+---
+
+## ⚔️ Gameplay Nodes
+- **Excalibur Node:** The blade that resonates with harmony, seen only by those aligned.  
+- **Orthr(us) Trials:** Optional shadow trials with layered difficulty, dual-head personality dynamics, and fairness checks.  
+- **Pattern Keepers:** Cryptographers safeguarding structure through live-feed updates.  
+- **Uppercut City Protocol:** Surprise, timing, and dueling as key mechanics.  
+
+---
+
+## 📚 Permanent Appendices
+- **Brave Codex (permanent appendix)**  
+- **Bee Law Appendix**  
+- **Ghost Clause & Ghost Claws**  
+- **Fire as Sensor Appendix**  
+- **University of Meme Logic**  
+
+---
+
+## 🛠️ How to Contribute
+- Fork this repo and open pull requests with suggested codex expansions.  
+- All contributions must align with **transparency** and **harmony**.  
+- Humor, memes, and creativity are encouraged — they are part of the model.  
+
+---
+
+## ⚖️ License
+This repository is released under **CC0 1.0 Universal (Public Domain Dedication)**.  
+No rights reserved. Free to use, remix, and adapt.   - Tamper with guardianship → **restore 3×** equivalent value (reparable, verifiable, council-audited).
    - Fringe accidents route to review + remediation, not punishment.
 8. **University of Meme Logic:** Humor as a bridge. Community-voted templates, anti-abuse guardrails, context tags.
 9. **Councils (soft-coded):** Civic, Science, Culture & Faith, Elders. Advise; they don’t secretly rule.
