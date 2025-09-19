@@ -98,3 +98,10 @@ Skyhole is a public-domain blueprint for a cooperative game/OS that treats real-
         ├── surprise_pikachu.png
         ├── trundle_troll_toll.png
         └── orthus_puppy_head.png
+echo "# Skyhole
+Codex of cascading logic protocols.  
+See cascadefixeslist.txt for live fixes." > README.md
+
+git add README.md
+git commit -m "Add starter README"
+git push origin main
