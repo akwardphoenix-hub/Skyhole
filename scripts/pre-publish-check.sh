@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Pre-publish check script
+# Note: This script does NOT regenerate documentation or setup files
+# to avoid recursive loops. Run 'npm run regen-docs' separately if needed.
+
 echo "🔎 Node/npm:"
 node -v || true
 npm -v || true

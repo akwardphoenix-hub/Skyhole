@@ -1,0 +1,5 @@
+# Frozen documentation files - maintained manually to avoid regeneration loops
+# These files should NOT be automatically regenerated during CI/E2E runs
+README.md linguist-documentation
+BRAVE_CODEX.md linguist-documentation
+.github/instructions/*.md linguist-documentation

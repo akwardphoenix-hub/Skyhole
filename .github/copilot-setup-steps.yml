@@ -1,5 +1,7 @@
 name: Copilot setup steps (pre-firewall)
 version: 1
+# Note: This file does NOT regenerate documentation or setup files
+# to avoid recursive loops. Frozen files: README.md, BRAVE_CODEX.md, .github/instructions/*
 steps:
   - name: Use Node 20
     run: |

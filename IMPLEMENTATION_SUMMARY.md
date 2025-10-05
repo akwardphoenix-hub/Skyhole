@@ -179,13 +179,25 @@ All required packages installed (277 total):
 | `npm run dev` | Start development server (port 5173) |
 | `npm run build` | Build for production |
 | `npm run preview` | Preview production build (port 4173) |
-| `npm run preview:ci` | Preview for CI (same as preview) (NEW) |
+| `npm run preview:ci` | Preview for CI (same as preview) |
 | `npm run typecheck` | TypeScript type checking |
 | `npm run lint` | ESLint code linting |
 | `npm run test:e2e` | Run Playwright E2E tests |
 | `npm run test:e2e:ui` | Run E2E tests in UI mode |
 | `npm run test:report` | Show Playwright HTML report |
-| `npm run prepublish-check` | Full verification script |
+| `npm run prepublish-check` | Full verification script (no doc regen) |
+| `npm run regen-docs` | Manual doc regeneration (optional) |
+
+## 📝 Documentation Policy
+
+To prevent recursive loops and ensure stable CI builds:
+
+- **Frozen Files**: The following files are maintained manually and NOT auto-regenerated:
+  - `README.md`
+  - `BRAVE_CODEX.md`
+  - `.github/instructions/*.md`
+- **No Auto-Regeneration**: `scripts/pre-publish-check.sh` and `.github/copilot-setup-steps.yml` do NOT regenerate documentation
+- **Manual Only**: Use `npm run regen-docs` if documentation regeneration is needed (currently a no-op placeholder)
 
 ## ✨ Summary
 
