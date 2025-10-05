@@ -4,6 +4,16 @@
 This repository houses the **Brave Codex**, a living appendix that codifies survival, harmony, and justice protocols into a universal model.  
 It integrates with the **Cascade Fixes Protocol** to ensure consistency, transparency, and resilience.
 
+## Offline Dev / Tests
+- This repo is configured for **offline-first** development.
+- All data loads from `/public/data/*.json`.
+- To run:
+  - `npm ci`
+  - `npx playwright install chromium`
+  - `npm run build && npm run test:e2e`
+
+If you see firewall blocks (esm.ubuntu.com, api.github.com), that's expected in the agent sandbox. The **copilot-setup-steps** pre-installs what it needs before firewall rules apply.
+
 ---
 
 ## 📜 Core Principles
