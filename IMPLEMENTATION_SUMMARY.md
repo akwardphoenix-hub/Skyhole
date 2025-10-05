@@ -25,7 +25,8 @@ Successfully implemented a complete offline-first Vite + React + TypeScript + Ta
 ├── src/
 │   ├── lib/
 │   │   ├── config.ts           # Feature flags (OFFLINE mode)
-│   │   └── audit.ts            # Audit trail helpers
+│   │   ├── audit.ts            # Audit trail helpers
+│   │   └── net-fallback.ts     # Safe fetch with fallback (NEW)
 │   ├── services/
 │   │   └── councilData.ts      # Data layer (proposals, votes)
 │   ├── components/
@@ -36,11 +37,14 @@ Successfully implemented a complete offline-first Vite + React + TypeScript + Ta
 ├── public/data/
 │   └── council-proposals.json  # Local fixture data
 ├── e2e/
-│   └── 01-app-loads.spec.ts   # E2E test (Playwright)
+│   ├── support/
+│   │   └── network.ts          # Network blocking utility (NEW)
+│   ├── playwright.setup.ts     # Test setup (NEW)
+│   └── 01-app-loads.spec.ts    # E2E test (Playwright)
 ├── scripts/
 │   └── pre-publish-check.sh   # Pre-publish verification script
 ├── .github/
-│   ├── workflows/test.yml     # GitHub Actions E2E workflow
+│   ├── workflows/test.yml     # GitHub Actions E2E workflow (UPDATED)
 │   ├── copilot-instructions.md
 │   ├── copilot-setup-steps.yml
 │   └── instructions/          # Path-specific Copilot rules
@@ -61,12 +65,28 @@ URL: https://playwright.download.prss.microsoft.com/...
 **Why this is expected**:
 - The problem statement mentions: "If you see firewall blocks (esm.ubuntu.com, api.github.com), that's expected in the agent sandbox"
 - The `copilot-setup-steps.yml` is designed to pre-install browsers before firewall rules apply
-- In GitHub Actions CI, this will work with: `npx playwright install --with-deps chromium`
+- In GitHub Actions CI, this will work with: `npx playwright install chromium` (without `--with-deps`)
 
 **Workaround**: The E2E test configuration is correct and will work when:
 1. Browsers are pre-installed
 2. Running in GitHub Actions (with proper network access)
 3. Running locally on developer machines
+
+## 🔒 Network Security Improvements
+
+### Network Blocking in E2E Tests
+All E2E tests now include automatic network blocking to ensure no external requests:
+- `/e2e/support/network.ts` - Blocks all non-localhost requests
+- Auto-applied via test.beforeEach hook
+- Allows data: and blob: URLs for assets
+- Provides mock responses for known endpoints
+
+### CI/CD Improvements
+- Removed `--with-deps` flag to avoid apt/ESM network calls
+- Uses `npx playwright install chromium` (browsers only)
+- Added webkit support for broader testing
+- Timeout protection (15 minutes max)
+- Automatic HTML report upload on failure
 
 ## 🎯 Acceptance Criteria Status
 
@@ -159,9 +179,12 @@ All required packages installed (277 total):
 | `npm run dev` | Start development server (port 5173) |
 | `npm run build` | Build for production |
 | `npm run preview` | Preview production build (port 4173) |
+| `npm run preview:ci` | Preview for CI (same as preview) (NEW) |
 | `npm run typecheck` | TypeScript type checking |
 | `npm run lint` | ESLint code linting |
 | `npm run test:e2e` | Run Playwright E2E tests |
+| `npm run test:e2e:ui` | Run E2E tests in UI mode |
+| `npm run test:report` | Show Playwright HTML report |
 | `npm run prepublish-check` | Full verification script |
 
 ## ✨ Summary

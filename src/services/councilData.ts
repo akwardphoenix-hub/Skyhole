@@ -1,4 +1,5 @@
 import { DATA_BASE } from '../lib/config';
+import { safeFetch } from '../lib/net-fallback';
 
 export type Proposal = {
   id: string;
@@ -10,7 +11,7 @@ export type Proposal = {
 
 export async function getProposals(): Promise<Proposal[]> {
   // Always local fixtures to avoid network flake
-  const res = await fetch(`${DATA_BASE}/council-proposals.json`, { cache: 'no-store' });
+  const res = await safeFetch(`${DATA_BASE}/council-proposals.json`, { cache: 'no-store' });
   if (!res.ok) throw new Error('Failed to load proposals');
   return res.json();
 }
